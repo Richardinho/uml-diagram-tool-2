@@ -1,0 +1,39 @@
+#editor {
+  margin: 8px;
+}
+
+#editor h2 {
+}
+
+.editor-section {
+  padding: 8px 0;
+  border-bottom: solid 1px black;
+}
+
+.editor-section__header {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.editor-section__name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+.editor-section__property {
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.editor-section__property-label:after {
+  content: ":";
+  margin: 0 2px;
+}
+
+.editor-section__property-value {
+}

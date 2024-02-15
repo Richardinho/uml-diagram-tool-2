@@ -1,0 +1,97 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: helvetica;
+  margin: 0;
+}
+
+#svg-container {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+}
+
+#canvas {
+  position: absolute;
+  left: -10000px;
+}
+
+#svg {
+  background: #fff;
+  box-shadow: -2px 5px 5px 2px #aaa;
+}
+
+#test-ground {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 1fr 250px;
+}
+
+#side-bar {
+  background: grey;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#top-bar {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background: black;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.nav-bar--link {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-bar--link-icon {
+  display: flex;
+  background: transparent;
+  svg {
+    fill: currentColor;
+    margin: auto;
+  }
+  position: relative;
+  width: 30px;
+  height: 30px;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    border: solid 1px white;
+  }
+}
+
+svg {
+  background: white;
+}
+

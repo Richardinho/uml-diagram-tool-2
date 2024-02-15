@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/menu.css" />
+    <link rel="stylesheet" href="./styles/editor.css" />
+    <link rel="stylesheet" href="./styles/palette.css" />
+    <link rel="stylesheet" href="./styles/connector.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="svg-container">
+        <canvas id="canvas"></canvas>
+        <svg id="svg" xmlns="http://www.w3.org/2000/svg">
+          <style></style>
+        </svg>
+      </div>
+      <div id="side-bar">
+        <ul id="menu"></ul>
+        <div id="zoom-container" class="zoom-container"></div>
+      </div>
+      <div id="top-bar"></div>
+    </div>
+    <div id="test-ground"></div>
+    <div id="palette"></div>
+    <script src="./lib/rasterizeHTML.allinone.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

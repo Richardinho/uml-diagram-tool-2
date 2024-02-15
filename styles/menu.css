@@ -1,0 +1,28 @@
+#side-bar {
+  padding-top: 10px;
+}
+
+#menu {
+}
+
+#menu li {
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+[data-command] {
+  cursor: pointer;
+}
+
+.zoom-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.zoom-container > input {
+  width: 100%;
+}
+
+.zoom-label {
+}

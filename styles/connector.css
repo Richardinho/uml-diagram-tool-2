@@ -1,0 +1,22 @@
+.connector line {
+  stroke: #aaa;
+}
+
+.connector.selected line {
+  stroke: #333;
+}
+
+.white-arrow,
+.white-diamond {
+  stroke: grey;
+  fill: white;
+}
+
+.black-diamond {
+  fill: black;
+  stroke: black;
+}
+
+.black-arrow {
+  stroke: #333;
+}

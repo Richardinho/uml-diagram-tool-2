@@ -1,0 +1,61 @@
+<button id="button">click to download</button>
+
+<svg
+  style="background: pink"
+  xmlns="http://www.w3.org/2000/svg"
+  width="400"
+  height="400"
+  id="svg_element"
+>
+  <rect width="10" height="10" fill="red" x="0" y="0" />
+  <rect width="10" height="10" fill="green" x="390" y="390" />
+  <rect width="100" height="100" fill="blue" x="50" y="100" />
+  <circle stroke="black" cx="130" cy="200" r="40" fill="yellow" />
+</svg>
+
+<script>
+  function exportImage() {
+    const multiplier = 20;
+
+    var svgElement = document.getElementById("svg_element");
+    let { width, height } = svgElement.getBBox();
+    width *= multiplier;
+    height *= multiplier;
+
+    let clonedSvgElement = svgElement.cloneNode(true);
+
+    let outerHTML = clonedSvgElement.outerHTML;
+    let blob = new Blob([outerHTML], { type: "image/svg+xml" });
+    let blobURL = URL.createObjectURL(blob);
+
+    let image = new Image();
+
+    image.addEventListener("load", () => {
+      let canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+
+      let context = canvas.getContext("2d");
+      context.drawImage(image, 0, 0, width, height);
+      context.imageSmoothingEnabled = false;
+
+      let png = canvas.toDataURL("image/png");
+
+      const name = "foo.png";
+
+      var link = document.createElement("a");
+      link.download = name;
+      link.style.opacity = "0";
+      document.body.append(link);
+      link.href = png;
+      link.click();
+      link.remove();
+    });
+
+    image.src = blobURL;
+  }
+
+  button.addEventListener("click", () => {
+    exportImage();
+  });
+</script>

@@ -1,0 +1,45 @@
+.palette {
+  display: flex;
+  flex-direction: column;
+  background: #ccc;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -3px 5px 0px rgba(50, 50, 50, 0.4);
+}
+
+.palette__container {
+  gap: 10px;
+  overflow: scroll;
+  padding: 10px;
+  display: none;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.palette.open .palette__container {
+  display: flex;
+}
+
+.palette__header {
+  padding: 8px;
+  display: flex;
+}
+
+.palette__close-button {
+  display: none;
+}
+
+.palette__open-button,
+.palette__close-button {
+  margin-left: auto;
+}
+
+.palette.open .palette__open-button {
+  display: none;
+}
+
+.palette.open .palette__close-button {
+  display: inline-block;
+}
