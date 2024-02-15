@@ -10,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jasmine-browser-runner": "^2.3.0",
-    "jasmine-core": "^5.1.1",
     "jest-environment-jsdom": "^29.7.0"
   },
   "dependencies": {
