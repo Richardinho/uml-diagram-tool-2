@@ -1,4 +1,7 @@
+import { makeMovable } from "../movable.js";
 import { createId } from "../utils.js";
+import { calculateXCoords } from "./x-coords.js";
+import { calculateYCoords } from "./y-coords.js";
 import {
   NO_ARROW,
   WHITE_ARROW,
@@ -72,7 +75,22 @@ export function createVerticalConnector(svgEl) {
       console.log('SECULAR TALK');
     });
 
+    function positionStrategy(xMovement, yMovement) {
+      calculateXCoords(index, xMovement, nodes);
+      calculateYCoords(index, yMovement, nodes);
+
+      repositionEndpoint(arrowEls, index, nodes);
+      repositionNodes(index);
+      repositionLines(index);
+    }
+
+    function disable() {
+      return node.typeBox;
+    }
+
     nodeEls.forEach((nodeEl) => connectorGroupEl.appendChild(nodeEl));
+
+    makeMovable(circle, positionStrategy, disable);
   });
 }
 
